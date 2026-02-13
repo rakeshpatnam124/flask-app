@@ -5,7 +5,8 @@ A simple **Flask** web application to manage student records with **MongoDB** as
 ---
 
 ## Features
-
+* Added New Feature
+* This is Another Feature
 * List all students on the home page
 * Add a new student
 * Update existing student details
@@ -128,6 +129,7 @@ Form pre-filled with student details.
 MIT License
 
 ---
+
 
 
 
