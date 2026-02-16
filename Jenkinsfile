@@ -15,8 +15,15 @@ pipeline {
     stage('Deploy') {
       steps {
         sh '''
-          tar -czf app.tgz .
-          scp -o StrictHostKeyChecking=no app.tgz $USER@$HOST:/tmp/app.tgz
+          tar --warning=no-file-changed \
+    --exclude=.git \
+    --exclude=venv \
+    --exclude=__pycache__ \
+    --exclude=app.tgz \
+    -czf /tmp/app.tgz .
+
+        scp -o StrictHostKeyChecking=no /tmp/app.tgz $USER@$HOST:/tmp/app.tgz
+
 
           ssh -o StrictHostKeyChecking=no $USER@$HOST '
             set -e
