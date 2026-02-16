@@ -22,10 +22,10 @@ pipeline {
     --exclude=app.tgz \
     -czf /tmp/app.tgz .
 
-        scp -o StrictHostKeyChecking=no /tmp/app.tgz $USER@$HOST:/tmp/app.tgz
+      scp -i /var/lib/jenkins/.ssh/ec2-key.pem -o StrictHostKeyChecking=no /tmp/app.tgz ec2-user@13.201.40.132:/tmp/app.tgz
 
 
-          ssh -o StrictHostKeyChecking=no $USER@$HOST '
+          ssh -i /var/lib/jenkins/.ssh/ec2-key.pem -o StrictHostKeyChecking=no ec2-user@13.201.40.132 '
             set -e
             rm -rf $APPDIR/*
             tar -xzf /tmp/app.tgz -C $APPDIR
