@@ -2,7 +2,7 @@ pipeline {
   agent any
 
   environment {
-    HOST   = "13.201.40.132"
+    HOST   = "ec2-13-201-40-132.ap-south-1.compute.amazonaws.com"
     USER   = "ec2-user"
     APPDIR = "/var/www/flaskapp"
     KEY    = "/var/lib/jenkins/.ssh/ec2-key.pem"
