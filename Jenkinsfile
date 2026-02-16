@@ -2,7 +2,7 @@ pipeline {
   agent any
 
   environment {
-    HOST = "ec2-13-201-40-132.ap-south-1.compute.amazonaws.com"
+    HOST = "13.201.40.132"
     USER = "ec2-user"
     APPDIR = "/var/www/flaskapp"
   }
